@@ -1,0 +1,35 @@
+html {
+    font-size: 62.5%;
+  }
+  
+body {
+    background: $off-white;
+}
+
+#app { 
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+    margin: $s-size $s-size;
+    display: flex;;
+  }
+
+.content {
+    margin-left: 19rem;
+}
+  
+  #app > * {
+    flex: 1 100%;
+  }
+
+  .app {
+      width:100%;
+  }
+
+  button {
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: default;
+  }
+  
