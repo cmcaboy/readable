@@ -25,7 +25,7 @@ export const editPost = (id,updates) => ({
     }
 });
 
-// EDIT_POST
+// LOAD_POST
 export const loadPost = (post) => ({
     type: 'LOAD_POST',
     post: {
@@ -43,7 +43,7 @@ export const removePost = (id) => ({
 });
 
 // UPVOTE_POST
-export const upvotePost = (id) => ({
+export const upVotePost = (id) => ({
     type: 'UPVOTE_POST',
     post: {
         id
@@ -53,7 +53,7 @@ export const upvotePost = (id) => ({
 
 // DOWNVOTE_POST
 
-export const downvotePost = (id) => ({
+export const downVotePost = (id) => ({
     type: 'DOWNVOTE_POST',
     post: {
         id

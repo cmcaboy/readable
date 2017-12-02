@@ -11,9 +11,9 @@ const Category = (props) => {
     return (
         <div className="category">
             {props.name? (
-                <Link onClick={onSubmit} to={`/category/${props.name}`}>{props.name}</Link>
+                <Link  to={`/category/${props.name}`}>{props.name}</Link>
             ):(
-                <Link onClick={onSubmit} to='/'>Home</Link>
+                <Link  to='/'>Home</Link>
             )}
             
         </div>

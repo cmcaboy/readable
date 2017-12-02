@@ -29,6 +29,14 @@ class NewPost extends React.Component {
         const author = e.target.value;
         this.setState(() => ({author}));
     }
+    componentWillReceiveProps = (nextProps) => {
+        this.setState(() => ({
+            title: nextProps.post ? nextProps.post.title:'',
+            body: nextProps.post ? nextProps.post.body:'',
+            category: nextProps.post ? nextProps.post.category:'',
+            author: nextProps.post ? nextProps.post.author:''
+        }))
+    }
 
     onSubmit = (e) => {
         e.preventDefault();

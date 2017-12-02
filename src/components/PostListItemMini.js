@@ -2,16 +2,17 @@ import React from  'react';
 import {Link} from 'react-router-dom';
 //import Comments from './Comments';
 import { connect } from 'react-redux';
-import { upvotePost,downvotePost,removePost } from '../action/posts';
+import { upVotePost,downVotePost,removePost } from '../action/posts';
 import { filterById } from '../action/filters';
 import Comments from './Comments';
+import numComments from '../selectors/numComments';
 
-const PostListItem = ({dispatch,title,author,category,timestamp,voteScore,body,id}) => {
+const PostListItemMini = ({dispatch,title,author,category,timestamp,voteScore,body,id,commentCount}) => {
     const onVoteUp = () => {
-        dispatch(upvotePost(id));
+        dispatch(upVotePost(id));
     };
     const onVoteDown = () => {
-        dispatch(downvotePost(id));
+        dispatch(downVotePost(id));
     };
     const removeThisPost = () => {
         dispatch(removePost(id));
@@ -31,11 +32,17 @@ const PostListItem = ({dispatch,title,author,category,timestamp,voteScore,body,i
         <button onClick={onVoteDown}>Vote Down</button>
         <button onClick={removeThisPost}>Remove</button>
         <Link to={`/edit/${id}`}><button>edit</button></Link>
+        <p>Number of Comments: {commentCount}</p>
     </div>
     )
 };
 
-// Will need to add in the comment component.
+const mapStateToProps = (state, ownProps) => {
+    return {
+        props: ownProps,
+        commentCount: numComments(state.comments,ownProps.id)
+    }
+}
 
-export default connect()(PostListItem);
+export default connect(mapStateToProps)(PostListItemMini);
 

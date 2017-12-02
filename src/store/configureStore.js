@@ -1,12 +1,14 @@
-import {createStore,combineReducers} from 'redux';
+import {createStore,combineReducers,applyMiddleware} from 'redux';
 // Import Reducers
 import postsReducer from '../reducers/posts';
 import commentsReducer from '../reducers/comments';
 import filtersReducer from '../reducers/filters';
 import categoryReducer from '../reducers/category';
+import thunk from 'redux-thunk';
 
 
 export default () => {
+
     const store = createStore(
         combineReducers({
             // List reducers once they are defined.
@@ -15,7 +17,8 @@ export default () => {
             filters: filtersReducer,
             categories: categoryReducer
         }),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        applyMiddleware(thunk)
+    //    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
     return store;
 }

@@ -1,5 +1,10 @@
 import React from 'react';
-import {upVoteComment,downVoteComment,removeComment,editComment} from  '../action/comments';
+import {
+    upVoteComment,
+    downVoteComment,
+    removeComment,
+    editComment
+    } from  '../action/comments';
 import {connect} from 'react-redux';
 
 class Comment extends React.Component {

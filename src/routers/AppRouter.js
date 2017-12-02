@@ -22,6 +22,7 @@ const AppRouter = () => (
                 <Route path="/category/:category" component={PostList}/>
                 <Route path="/detail/:id" component={PostDetail}/>
                 <Route path="/edit/:id" component={EditPost}/>
+                <Route path="/:category/:id" component={PostDetail}/>
                 <Route path="/create" component={CreateNewPost}/>
                 <Route component={NotFoundPage}/>
             </Switch> 

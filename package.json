@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public",
+    "start": "webpack-dev-server",
     "build": "webpack",
     "dev-server": "webpack-dev-server"
   },
@@ -35,6 +36,7 @@
     "react-thunk": "^1.0.0",
     "redux": "3.7.2",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "uuid": "^3.1.0",

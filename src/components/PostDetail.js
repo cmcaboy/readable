@@ -3,14 +3,25 @@ import {connect} from 'react-redux';
 import PostListItem from './PostListItem';
 import getPost from '../selectors/getPost';
 
-const PostList = (props) => (
-    <div>
-        <PostListItem 
-            key={props.post.id}
-            {...props.post}
-        />
-    </div>
-)
+const PostDetail = (props) => {
+    //if(!props.post) {
+    //    props.history.push('/pageNotFound');
+    //}
+    return (
+        <div>
+            {console.log(props.post)}
+            {!props.post?(
+                <h3>Post Not Found!</h3>
+            ):(
+                <PostListItem 
+                key={props.post?props.post.id:''}
+                {...props.post}
+            />
+            )}
+            
+        </div>
+    )
+}
 
 const mapStateToProps = (state,ownProps) => {
     return {
@@ -19,4 +30,4 @@ const mapStateToProps = (state,ownProps) => {
     };
 };
 
-export default connect(mapStateToProps)(PostList);
+export default connect(mapStateToProps)(PostDetail);

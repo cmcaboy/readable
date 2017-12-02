@@ -38,7 +38,9 @@ class PostList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state,ownProps) => {
+    ownProps.match.params ? state.filters.category = ownProps.match.params.category:state.filters.category='';
+
     return {
         // Will filter this with a selector
         posts: applyFilters(state.posts,state.filters),

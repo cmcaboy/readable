@@ -2,16 +2,16 @@ import React from  'react';
 import {Link} from 'react-router-dom';
 //import Comments from './Comments';
 import { connect } from 'react-redux';
-import { upvotePost,downvotePost,removePost } from '../action/posts';
+import { upVotePost,downVotePost,removePost } from '../action/posts';
 import { filterById } from '../action/filters';
 import Comments from './Comments';
 
 const PostListItem = ({dispatch,title,author,category,timestamp,voteScore,body,id}) => {
     const onVoteUp = () => {
-        dispatch(upvotePost(id));
+        dispatch(upVotePost(id));
     };
     const onVoteDown = () => {
-        dispatch(downvotePost(id));
+        dispatch(downVotePost(id));
     };
     const removeThisPost = () => {
         dispatch(removePost(id));
