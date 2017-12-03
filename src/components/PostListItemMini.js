@@ -23,7 +23,7 @@ const PostListItemMini = ({dispatch,title,author,category,timestamp,voteScore,bo
     };
     return (
     <div className="post-menu-item">
-        <Link to={`/detail/${id}`}><h3>{title}</h3></Link>
+        <Link to={`/${category?category:'detail'}/${id}`}><h3>{title}</h3></Link>
         <h5>By: {author}</h5>
         <h5>Category: {category}</h5>
         <h5 className="post-timestamp">{timestamp}</h5>
