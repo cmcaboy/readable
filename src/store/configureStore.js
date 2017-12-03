@@ -5,6 +5,7 @@ import commentsReducer from '../reducers/comments';
 import filtersReducer from '../reducers/filters';
 import categoryReducer from '../reducers/category';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 
 export default () => {
@@ -17,7 +18,7 @@ export default () => {
             filters: filtersReducer,
             categories: categoryReducer
         }),
-        applyMiddleware(thunk)
+        applyMiddleware(thunk,logger)
     //    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
     return store;

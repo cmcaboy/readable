@@ -4,38 +4,32 @@ import PostListItemMini from './PostListItemMini';
 import applyFilters from '../selectors/posts';
 import {filterByCategory,sortBy} from '../action/filters';
 
-class PostList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const PostList = (props) => {
 
-    onSortChange = (e) => {
+    const onSortChange = (e) => {
         const sortMethod = e.target.value;
-        this.props.dispatch(sortBy(sortMethod));
+        props.dispatch(sortBy(sortMethod));
     }
-
-    render() {
-        return (
-            <div>
-                <div className="sort-object">
-                    <p>Sort By: </p>
-                    <select
-                        value={this.props.sortBy}
-                        onChange={this.onSortChange}
-                    >
-                        <option value="timestamp">Most Recent</option>
-                        <option value="vote">Highest Score</option>
-                    </select>
-                </div>
-                {this.props.posts.map(post => (
-                <PostListItemMini 
-                    key={post.id}
-                    {...post}
-                />
-            ))}
+    return (
+        <div>
+            <div className="sort-object">
+                <p>Sort By: </p>
+                <select
+                    value={props.sortBy}
+                    onChange={onSortChange}
+                >
+                    <option value="timestamp">Most Recent</option>
+                    <option value="vote">Highest Score</option>
+                </select>
+            </div>
+            {props.posts.map(post => (
+            <PostListItemMini 
+                key={post.id}
+                {...post}
+            />
+        ))}
         </div>
-        )
-    }
+    )
 }
 
 const mapStateToProps = (state,ownProps) => {
