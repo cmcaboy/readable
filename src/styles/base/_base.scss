@@ -3,19 +3,16 @@ html {
   }
   
 body {
-    background: $off-white;
+    background: whitesmoke;
 }
 
 #app { 
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
     margin: $s-size $s-size;
-    display: flex;;
+    display: flex;
   }
 
-.content {
-    margin-left: 19rem;
-}
   
   #app > * {
     flex: 1 100%;
@@ -31,5 +28,20 @@ body {
   
   button:disabled {
     cursor: default;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+    }
+  }
+
+  .content-container {
+    margin-left: 4rem;
   }
   

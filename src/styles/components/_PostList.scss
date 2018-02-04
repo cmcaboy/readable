@@ -1,0 +1,18 @@
+.list-section {
+    margin-top: $l-size;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    @media screen and (max-width: $break-small) {
+        grid-template-columns: 1fr;
+    }
+    @media screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (min-width: $break-large) {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1000px;
+        grid-gap: 2em;
+    }
+}

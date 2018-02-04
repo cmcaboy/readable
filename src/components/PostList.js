@@ -22,12 +22,14 @@ const PostList = (props) => {
                     <option value="vote">Highest Score</option>
                 </select>
             </div>
-            {props.posts.map(post => (
-            <PostListItemMini 
-                key={post.id}
-                {...post}
-            />
-        ))}
+            <div className="list-section">
+                {props.posts.map(post => (
+                    <PostListItemMini 
+                        key={post.id}
+                        {...post}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

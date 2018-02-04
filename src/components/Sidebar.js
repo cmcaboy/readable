@@ -12,7 +12,7 @@ const Sidebar = (props) => {
     }
 
     return (
-    <div className="Sidebar">
+    <div className="sidebar-container">
         <Link to="/create"><button>New</button></Link>
         <Category name=''/>
         {props.categories.map(category => (

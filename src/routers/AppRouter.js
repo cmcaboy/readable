@@ -13,19 +13,23 @@ import PostDetail from '../components/PostDetail';
 const AppRouter = () => (
     <BrowserRouter>
     <div className="app">
-        <Header />
-        <hr />
-        <Sidebar />
-        <div className="content">
-            <Switch>
-                <Route path="/" component={PostList} exact={true}/>
-                <Route path="/category/:category" component={PostList}/>
-                <Route path="/detail/:id" component={PostDetail}/>
-                <Route path="/edit/:id" component={EditPost}/>
-                <Route path="/:category/:id" component={PostDetail}/>
-                <Route path="/create" component={CreateNewPost}/>
-                <Route component={NotFoundPage}/>
-            </Switch> 
+        <div className="container">
+                <Sidebar />
+            <div className="content-container">
+                <Header />
+                <hr />
+                <div className="content">
+                <Switch>
+                    <Route path="/" component={PostList} exact={true}/>
+                    <Route path="/category/:category" component={PostList}/>
+                    <Route path="/detail/:id" component={PostDetail}/>
+                    <Route path="/edit/:id" component={EditPost}/>
+                    <Route path="/:category/:id" component={PostDetail}/>
+                    <Route path="/create" component={CreateNewPost}/>
+                    <Route component={NotFoundPage}/>
+                </Switch> 
+                </div>
+            </div>
         </div>
     </div>
     </BrowserRouter>

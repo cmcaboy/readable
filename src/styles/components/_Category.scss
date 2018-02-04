@@ -2,5 +2,8 @@
     margin-top: $s-size;
     margin-bottom: $s-size;
     font-size: $l-size;
+    @media screen and (max-width: $break-small) {
+        font-size: $m-size;
+    }
 }
 

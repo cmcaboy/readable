@@ -1,7 +1,16 @@
-.Sidebar {
+.sidebar-container {
     padding: $s-size $xl-size;
-    width: $sidebar-width;
-    height: 100%;
-    position: absolute;
     background-color: $light-blue;
+    margin:0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: $sidebar-width;
+    @media screen and (max-width: $break-small) {
+        //display: none;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: $s-size;
+        max-width: none;
+    }
 }
